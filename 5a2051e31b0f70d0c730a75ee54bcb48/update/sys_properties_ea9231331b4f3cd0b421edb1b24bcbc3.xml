@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>false</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_orsted_upgrade.orsted.upgrade_guide.service_acc_query</name>
+        <read_roles/>
+        <suffix>orsted.upgrade_guide.service_acc_query</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>AHMAS</sys_created_by>
+        <sys_created_on>2021-10-14 02:38:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ea9231331b4f3cd0b421edb1b24bcbc3</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>x_orsted_upgrade.orsted.upgrade_guide.service_acc_query</sys_name>
+        <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+        <sys_update_name>sys_properties_ea9231331b4f3cd0b421edb1b24bcbc3</sys_update_name>
+        <sys_updated_by>AHMAS</sys_updated_by>
+        <sys_updated_on>2021-10-15 07:01:01</sys_updated_on>
+        <type>string</type>
+        <value>sysparm_query=sys_created_byINAHHAM%2CAHMAS%2CKAMAB%2CSESBA%2CPOVEI%2CTOMDA%2CKIRMA%2Cxhvij%2CXLUID&amp;sysparm_view=</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=ea9231331b4f3cd0b421edb1b24bcbc3"/>
+</record_update>

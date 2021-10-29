@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="state" table="x_orsted_upgrade_upgrade_guide" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>2ea5d56b1b4f70d0c730a75ee54bcb48</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>state</sys_name>
+            <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+            <sys_update_name>sys_choice_x_orsted_upgrade_upgrade_guide_state</sys_update_name>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:53:18</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Planning</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>0</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>e2a5d56b1b4f70d0c730a75ee54bcb48</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:58</sys_updated_on>
+            <value>900</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Pre-work</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>1</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>6ea5d56b1b4f70d0c730a75ee54bcb4b</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>910</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Clonning</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>2</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>26a5d56b1b4f70d0c730a75ee54bcb4e</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>920</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Post-work</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>3</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>eaa5d56b1b4f70d0c730a75ee54bcb50</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>930</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Upgrade</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>4</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:59:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>a83799ab1b4f70d0c730a75ee54bcbdb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>940</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Review Skip Record</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>5</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:59:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>683799ab1b4f70d0c730a75ee54bcbde</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>950</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Testing</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>6</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:59:59</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>203799ab1b4f70d0c730a75ee54bcbe1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>960</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>state</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Completed</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>7</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>a2a5d56b1b4f70d0c730a75ee54bcb53</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:59:59</sys_updated_on>
+            <value>990</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
