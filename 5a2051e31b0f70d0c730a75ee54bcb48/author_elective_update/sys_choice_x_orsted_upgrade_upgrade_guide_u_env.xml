@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_env" table="x_orsted_upgrade_upgrade_guide" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_env</element>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 08:27:47</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>3909f1e31b83b0d0c730a75ee54bcbf5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_env</sys_name>
+            <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+            <sys_update_name>sys_choice_x_orsted_upgrade_upgrade_guide_u_env</sys_update_name>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 08:27:47</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_env</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Dev</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>0</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 08:27:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>bd09f1e31b83b0d0c730a75ee54bcbf4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 08:27:47</sys_updated_on>
+            <value>dev</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_env</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Test</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>1</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 08:27:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>7909f1e31b83b0d0c730a75ee54bcbf8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 08:27:47</sys_updated_on>
+            <value>test</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_env</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Prod</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>2</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 08:27:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>3109f1e31b83b0d0c730a75ee54bcbfb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 08:27:47</sys_updated_on>
+            <value>prod</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_env</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Edu</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <sequence>3</sequence>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 08:27:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_id>f509f1e31b83b0d0c730a75ee54bcbfd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 08:27:47</sys_updated_on>
+            <value>edu</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

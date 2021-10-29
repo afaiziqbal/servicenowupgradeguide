@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Upgrade Guide" max_length="40" name="x_orsted_upgrade_upgrade_guide" sizeclass="8" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="AHHAM" max_length="1000" name="u_ahham" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="AHMAS" max_length="1000" name="u_ahmas" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Auth" max_length="1000" name="u_auth" type="string"/>
+        <element attributes="encode_utf8=false" label="Backdoor Account" max_length="32" name="u_back_acc" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Clonning Date" max_length="40" name="u_clone_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Email Account" max_length="1000" name="u_email_account" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Environment" max_length="40" name="u_env" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Dev" sequence="0" value="dev"/>
+                <element inactive_on_update="false" label="Test" sequence="1" value="test"/>
+                <element inactive_on_update="false" label="Prod" sequence="2" value="prod"/>
+                <element inactive_on_update="false" label="Edu" sequence="3" value="edu"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Integration" max_length="1000" name="u_integration" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="KAMAB" max_length="1000" name="u_kamab" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="List of Backup" max_length="1000" name="u_list" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="MOHIT" max_length="1000" name="u_mohit" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Service Account" max_length="1000" name="u_service_account" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="TOMDA" max_length="1000" name="u_tomda" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Update Set" max_length="1000" name="u_update_set" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Upgrade Date" max_length="40" name="u_upgrade_date" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Upgrade to" max_length="40" name="u_version" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Rome" sequence="0" value="rome"/>
+                <element inactive_on_update="false" label="San Diego" sequence="1" value="san_diego"/>
+                <element inactive_on_update="false" label="Tokyo" sequence="2" value="tokyo"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="u_back_acc"/>
+        </index>
+    </element>
+</database>
