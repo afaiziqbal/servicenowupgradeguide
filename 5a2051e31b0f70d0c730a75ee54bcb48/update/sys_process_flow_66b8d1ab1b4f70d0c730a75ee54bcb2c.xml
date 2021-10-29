@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_process_flow">
+    <sys_process_flow action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <condition table="x_orsted_upgrade_upgrade_guide">state=910^EQ<item display_value="Pre-work" endquery="false" field="state" goto="false" newquery="false" operator="=" or="false" value="910"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <description/>
+        <label>Pre-work</label>
+        <name>Pre-work</name>
+        <order>200</order>
+        <sys_class_name>sys_process_flow</sys_class_name>
+        <sys_created_by>AHMAS</sys_created_by>
+        <sys_created_on>2021-10-13 06:06:40</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>66b8d1ab1b4f70d0c730a75ee54bcb2c</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Pre-work</sys_name>
+        <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+        <sys_update_name>sys_process_flow_66b8d1ab1b4f70d0c730a75ee54bcb2c</sys_update_name>
+        <sys_updated_by>AHMAS</sys_updated_by>
+        <sys_updated_on>2021-10-13 06:10:50</sys_updated_on>
+        <table>x_orsted_upgrade_upgrade_guide</table>
+    </sys_process_flow>
+</record_update>

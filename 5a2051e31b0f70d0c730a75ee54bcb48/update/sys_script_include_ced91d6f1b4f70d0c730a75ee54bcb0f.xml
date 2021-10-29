@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_orsted_upgrade.GenerateBackup</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GenerateBackup</name>
+        <script><![CDATA[var GenerateBackup = Class.create();
+GenerateBackup.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+	prework: function(upgrade_record,version) {
+		var tableList = gs.getProperty('x_orsted_upgrade.orsted.upgrade_guide.table_list');
+		var tableListArr = tableList.split(',');
+
+
+		for(var i = 0; i<tableListArr.length;i++){
+			this.getRecord(upgrade_record,version,tableListArr[i]);
+		}
+		this.getServiceAccRecord(upgrade_record,version,'sys_user_list');
+	},
+
+
+	getRecord: function(upgrade_record,version,table){
+		var gr = new GlideRecord(table);
+		gr.addEncodedQuery('sys_created_by!=admin^sys_created_by!=system^sys_created_by!=guest^sys_created_by!=maint^sys_created_by!=dloo');
+		gr.query();
+		while(gr.next()){
+			var param = "sys_id="+gr.sys_id;
+			var name = gr.name;
+			if(name == null)
+				name = gr.function_name;
+			this.generateFile(upgrade_record,version,table,name,param);
+		}
+	},
+
+	getServiceAccRecord: function(upgrade_record,version,table){
+		var query = gs.getProperty('x_orsted_upgrade.orsted.upgrade_guide.service_acc_query');
+		this.generateFile(upgrade_record,version,table,'service_account',query.toString());
+	},
+
+
+
+	generateFile: function(upgrade_record,version,table,backup_record_name,backup_record_id) {
+		var request  = new sn_ws.RESTMessageV2();        
+		request.setHttpMethod('get');
+
+		var tablename = 'x_orsted_upgrade_upgrade_guide',
+			response,            
+			httpResponseStatus,             
+			filename =version + ' - ' + table + " - " +backup_record_name;
+		var instanceURL = gs.getProperty('glide.servlet.uri');
+		request.setEndpoint(instanceURL + table +".do?XML&"+ backup_record_id);   
+		request.setBasicAuth('UpgradeAdmin', gs.getProperty('x_orsted_upgrade.orsted.upgrade_guide.user'));
+
+		request.saveResponseBodyAsAttachment(tablename, upgrade_record, filename);        
+		this.updateForm(upgrade_record,filename);
+		response = request.execute();        
+		httpResponseStatus = response.getStatusCode();  
+
+		gs.info(" http response status_code:  " + httpResponseStatus);    
+	},
+
+	getUpdateSet: function(upgrade_record,version){
+		var gr = new GlideRecord('sys_update_set');
+		gr.addEncodedQuery('sys_created_by=AHMAS');
+		gr.query();
+		while(gr.next()){
+			var updateSetName = gr.sys_created_by+ " - "+gr.name;
+			this.generateUpdateSet(upgrade_record,version,'sys_update_set',updateSetName,gr);
+		}
+	},
+
+	generateUpdateSet: function(upgrade_record,version,table,backup_record_name,backup_record_obj) {
+
+
+		var sysid = this.exportUpdateSet(backup_record_obj);
+
+		var request  = new sn_ws.RESTMessageV2();        
+		request.setHttpMethod('get');
+
+		var tablename = 'x_orsted_upgrade_upgrade_guide',
+			response,            
+			httpResponseStatus,             
+			filename =version + ' - ' + table + " - " +backup_record_name;
+		var instanceURL = gs.getProperty('glide.servlet.uri');
+		request.setEndpoint(instanceURL +"export_update_set.do?sysparm_sys_id=" + sysid + "&sysparm_delete_when_done=true");   
+		request.setBasicAuth('UpgradeAdmin', gs.getProperty('x_orsted_upgrade.orsted.upgrade_guide.user'));
+
+		request.saveResponseBodyAsAttachment(tablename, upgrade_record, filename);        
+		this.updateForm(upgrade_record,filename);
+		response = request.execute();        
+		httpResponseStatus = response.getStatusCode();  
+
+		gs.info(" http response status_code:  " + httpResponseStatus);    
+	},
+
+	updateForm: function(upgrade_record,file){
+		var n = '\n';
+		//var filename = file.toString();
+		var gr = new GlideRecord('x_orsted_upgrade_upgrade_guide');
+		gr.get(upgrade_record);
+		if(file.includes('auth')||file.includes('sso')||file.includes('certificate'))
+			gr.u_auth += file + n ;
+		else if(file.includes('mail'))
+			gr.u_email_account += file + n ;
+		else if(file.includes('rest')||file.includes('soap'))
+			gr.u_integration = file + n;
+		else if(file.includes('sys_user_list'))
+			gr.u_service_account = file + n;
+		else if(file.includes('sys_update_set'))
+			gr.u_update_set = file + n;
+
+		gr.u_list += file+ n ;
+		gr.update();
+
+	},
+
+	conditionButton: function(role,state){
+		return gs.hasRole(role)&&(current.state==state);
+	},
+
+	nextButton: function(current,state){
+		action.setRedirectURL(current);
+		current.state = state;
+		current.update();
+	},
+
+	exportUpdateSet: function(backup_record_obj, baseUpdateSetId, parentId) {
+		var retrievedUpdateSet = new GlideRecord('sys_remote_update_set');
+		retrievedUpdateSet.initialize();
+
+		retrievedUpdateSet.description = backup_record_obj.description;
+		retrievedUpdateSet.name = backup_record_obj.name;
+		retrievedUpdateSet.release_date = backup_record_obj.release_date;
+		retrievedUpdateSet.remote_sys_id = backup_record_obj.sys_id;
+		retrievedUpdateSet.application = backup_record_obj.application;
+		retrievedUpdateSet.remote_base_update_set = baseUpdateSetId;
+		retrievedUpdateSet.parent = parentId; 
+
+		var scopeGr = new GlideRecord('sys_scope');
+		scopeGr.get(current.application);
+		if (scopeGr.isValid()) {
+			retrievedUpdateSet.application_name = scopeGr.name;
+			retrievedUpdateSet.application_scope = scopeGr.scope;
+			retrievedUpdateSet.application_version = scopeGr.version;
+		} 
+
+		if (current.parent.nil())
+			retrievedUpdateSet.state = "loaded";
+		else
+			retrievedUpdateSet.state = "in_hierarchy";
+
+		retrievedUpdateSet.setWorkflow(false);
+		var retrievedUpdateSetSysId = retrievedUpdateSet.insert();
+
+		var update = new GlideRecord('sys_update_xml');
+		update.addQuery('update_set', backup_record_obj.sys_id);
+		update.query();
+
+		while(update.next()) {
+			update.remote_update_set = retrievedUpdateSet.sys_id;
+			update.update_set = '';
+			update.insert();
+		}
+
+		return retrievedUpdateSetSysId;
+	},
+
+	type: 'GenerateBackup'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>AHMAS</sys_created_by>
+        <sys_created_on>2021-10-13 06:40:31</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>ced91d6f1b4f70d0c730a75ee54bcb0f</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>GenerateBackup</sys_name>
+        <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+        <sys_update_name>sys_script_include_ced91d6f1b4f70d0c730a75ee54bcb0f</sys_update_name>
+        <sys_updated_by>AHMAS</sys_updated_by>
+        <sys_updated_on>2021-10-29 05:17:59</sys_updated_on>
+    </sys_script_include>
+</record_update>

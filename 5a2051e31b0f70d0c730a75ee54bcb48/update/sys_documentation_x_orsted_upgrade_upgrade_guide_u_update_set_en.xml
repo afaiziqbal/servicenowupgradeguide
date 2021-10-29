@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_update_set" label="Update Set" language="en" table="x_orsted_upgrade_upgrade_guide">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_update_set</element>
+            <help/>
+            <hint/>
+            <label>Update Set</label>
+            <language>en</language>
+            <name>x_orsted_upgrade_upgrade_guide</name>
+            <plural>Update Sets</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>AHMAS</sys_created_by>
+            <sys_created_on>2021-10-13 05:53:17</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>22a5d56b1b4f70d0c730a75ee54bcb0b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Update Set</sys_name>
+            <sys_package display_value="Upgrade Guide" source="x_orsted_upgrade">5a2051e31b0f70d0c730a75ee54bcb48</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Upgrade Guide">5a2051e31b0f70d0c730a75ee54bcb48</sys_scope>
+            <sys_update_name>sys_documentation_x_orsted_upgrade_upgrade_guide_u_update_set_en</sys_update_name>
+            <sys_updated_by>AHMAS</sys_updated_by>
+            <sys_updated_on>2021-10-13 05:53:17</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
